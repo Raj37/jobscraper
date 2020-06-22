@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Job Detail Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>tr:hover {background-color: #f5f5f5;}</style>
+</head>
+
+<body>
+
+<div class="table-users">
+   <div class="header">Jobs Posting</div>
+   <div style="overflow-x:auto;">
+   <table cellspacing="0">
+      <tr>
+          <th>Job Link</th>
+          <th>Job Title</th>
+          <th>Company</th>
+          <th>Location</th>
+          <th>Work Exp</th>
+          <th>Salary</th>
+          <th width="230">Job Description</th>
+          <th>Skills</th>
+          <th>Job Posted</th>
+      </tr>
+         {% for review in reviews %}
+
+      <tr>
+          <td><a href={{review['Job Link']}}>Apply here</a></td>
+          <td>{{review['Job Title']}}</td>
+          <td>{{review['Company']}}</td>
+          <td>{{review['Location']}}</td>
+          <td>{{review['Work Exp']}} </td>
+          <td>{{review['Salary']}} </td>
+          <td>{{review['Job Description']}} </td>
+          <td>{{review['Skills']}} </td>
+          <td>{{review['Job Posted']}} </td>
+
+       {% endfor %}
+   </table>
+   </div>
+</div>
+
+
+
+</body>
+
+</html>
