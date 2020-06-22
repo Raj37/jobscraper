@@ -30,7 +30,7 @@ def index():
             searchJob = request.form['content']
             #searchProduct = request.form['content'].replace(" ", "")
             if len(searchJob.strip()) == 0:
-                return "Please enter job profile to list down Jobs"
+                return "Please note search box can't be empty.!!"
             else:
                 # Chrome driver
                 chrome_options = webdriver.ChromeOptions()
